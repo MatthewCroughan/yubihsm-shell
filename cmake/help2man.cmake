@@ -5,7 +5,7 @@ ENDIF ()
 
 MACRO (add_help2man_manpage file command)
   add_custom_command (OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/${file}
-    COMMAND  ${HELP2MAN_LOCATION} ARGS -s1 -N -o ${CMAKE_CURRENT_BINARY_DIR}/${file} ./${command}
+    COMMAND  ${HELP2MAN_LOCATION} ARGS -s1 -N -o ${CMAKE_CURRENT_BINARY_DIR}/${file} ${CMAKE_CURRENT_BINARY_DIR}/${command}
     DEPENDS ${command}
     COMMENT "Building manpage for ${command}")
 ENDMACRO ()
